@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>Javascript Task6</title>
+    <style media="screen">
+        .container {
+            width: 400px;
+            margin: auto;
+            padding: 50px;
+            background-color: #f7f7f7;
+        }
+        h1{
+            text-align:center;
+            font-style:italic;
+            font-weight:600;
+            font-size:45px;
+        }
+        form {
+            margin-bottom: 20px;
+        }
+        .input-container {
+            position: relative;
+            display: flex;
+            align-items: center;
+        }
+        input {
+            width: calc(100% - 40px);
+            padding: 10px;
+            margin-left: -10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        i {
+            border: 2px solid #e8ecef;
+            background-color: #e8ecef;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            padding: 10px;
+            height: auto;
+            vertical-align: middle;
+            margin-right: 10px;
+            display: inline-block;
+            border-radius: 5px;
+        }
+        button {
+            width: 100%;
+            padding: 10px;
+            background-color: blue;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        a, p {
+            display: inline;
+        }
+        .su {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            margin-top: 20px;
+        }
+        .rf {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .f {
+            order: 2;
+        }
+        .c {
+            order: 1;
+            display: flex;
+            align-items: center;
+        }
+        .c input {
+            margin-right: 5px;
+        }
+        .remember-me-label {
+            margin-left: 2px;
+            white-space:nowrap;
+        }
+        a {
+            color: #2a84ec;
+        }
+    </style>
+</head>
+<body>
+    <br><br><br>
+    <div class="container">
+        <h1>Instagram</h1>
+        <form action="#" class="inline">
+            <div class="input-container">
+                <i class="fa fa-user icon"></i>
+                <input type="text" placeholder="Username" id="username">
+            </div>
+            <br>
+            <div class="input-container">
+                <i class="fa fa-lock icon"></i>
+                <input type="password" placeholder="Password" id="password">
+            </div>
+            <br>
+            <button type="button" onclick="validate()">Log in</button>
+            <br><br>
+            <div class="rf">
+                <div class="c">
+                    <input type="checkbox" name="rem" id="rem">
+                    <label for="rem" class="remember-me-label"><span>Remember Me</span></label>
+                </div>
+                <a class="f" href="#" style="text-decoration:none;font-size:17px;">Forgot password?</a>
+            </div>
+        </form>
+    </div>
+    <div class="su">
+        <p>Don't have an account?</p>
+        <a href="#" style="text-decoration:none;">Sign up.</a>
+    </div>
+    <script>
+        function validate() {
+            var usernamefield = document.getElementById("username");
+            var passwordfield = document.getElementById("password");
+            if (
+                usernamefield.value !== "21BCE7192" ||
+                passwordfield.value !== "Karthika@0914"
+            ) {
+                alert("Invalid username or password!!");
+            } else {
+                alert("Welcome, Login Successful");
+            }
+        }
+    </script>
+</body>
+</html>

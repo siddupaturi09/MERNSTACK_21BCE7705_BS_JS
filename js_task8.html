@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Javascript Task8</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <style media="screen">
+      body {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin: 0;
+        background: linear-gradient(
+          180deg,
+          rgba(249, 255, 167, 1) 0%,
+          rgba(211, 69, 213, 1) 43%,
+          rgba(255, 130, 130, 1) 100%
+        );
+      }
+      h1 {
+        color: blue;
+        text-align: center;
+      }
+      radio-group {
+        vertical-align: middle;
+      }
+      label {
+        margin-right: 40px;
+        font-size: 16px;
+      }
+      .right-align {
+        text-align: right;
+      }
+      input[type="submit"] {
+        display: block;
+        margin: 0 auto;
+      }
+      th {
+        text-align: right;
+      }
+      input[type="text"],
+      input[type="password"],
+      input[type="number"],
+      select {
+        width: 100%;
+        padding: 3px;
+        margin: 4px 0;
+        border: 1px solid black;
+        border-radius: 4px;
+        box-sizing: border-box;
+      }
+      textarea#Address {
+        width: 100%;
+        padding: 85px;
+        margin: 0;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        box-sizing: border-box;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Registration form</h1>
+    <form onsubmit="return validateForm()">
+      <table style="width: 100%">
+        <tr>
+          <th><label for="First_Name">First Name</label></th>
+          <td><input type="text" id="First_Name" name="First_Name" /></td>
+          <td id="first_name_error" style="color: red"></td>
+        </tr>
+        <tr>
+          <th><label for="Last_Name">Last Name</label></th>
+          <td><input type="text" id="Last_Name" name="Last_Name" /></td>
+          <td id="last_name_error" style="color: red"></td>
+        </tr>
+        <tr>
+          <th><label for="Email">Email</label></th>
+          <td><input type="text" id="Email" name="Email" /></td>
+          <td id="email_error" style="color: red"></td>
+        </tr>
+        <tr>
+          <th><label for="Password">Password</label></th>
+          <td><input type="password" id="Password" name="Password" /></td>
+          <td id="password_error" style="color: red"></td>
+        </tr>
+        <tr>
+          <th><label for="Reenter_Password">Re-enter Password</label></th>
+          <td>
+            <input type="password" id="Reenter_Password" name="Reenter_Password" />
+          </td>
+          <td id="password_confirmation_error" style="color: red"></td>
+        </tr>
+        <tr>
+          <th><label for="Gender">Gender:</label></th>
+          <td class="radio-group">
+            <input type="radio" id="Male" name="Gender" value="Male" />
+            <label for="Male">Male</label>
+            <input type="radio" id="Female" name="Gender" value="Female" />
+            <label for="Female">Female</label>
+          </td>
+          <td id="gender_error" style="color: red"></td>
+        </tr>
+        <tr>
+          <th><label for="Age">Age:</label></th>
+          <td><input type="text" id="Age" name="Age" /></td>
+          <td id="age_error" style="color: red"></td>
+        </tr>
+        <tr>
+          <th><label for="Phone_Number">Phone Number</label></th>
+          <td><input type="text" id="Phone_Number" name="Phone_Number" /></td>
+          <td id="phone_number_error" style="color: red"></td>
+        </tr>
+        <tr style="height: 200px">
+          <th><label for="Address">Address</label></th>
+          <td>
+            <div style="width: 100%">
+              <textarea id="Address" name="Address" placeholder="" style="width: 450px"></textarea>
+            </div>
+          </td>
+          <td id="address_error" style="color: red"></td>
+        </tr>
+        <tr>
+          <th><label for="State">State</label></th>
+          <td><input type="text" id="State" name="State" /></td>
+          <td id="state_error" style="color: red"></td>
+        </tr>
+        <tr>
+          <th><label for="Country">Country</label></th>
+          <td>
+            <select id="Country" name="Country">
+              <option value="" selected>Choose a Country</option>
+              <option value="India">India</option>
+              <option value="USA">USA</option>
+              <option value="UK">UK</option>
+              <option value="China">China</option>
+              <option value="Japan">Japan</option>
+              <option value="Russia">Russia</option>
+              <option value="Other">Other</option>
+            </select>
+          </td>
+          <td id="country_error" style="color: red"></td>
+        </tr>
+        <tr>
+          <th><label for="Languages_Known">Languages Known</label></th>
+          <td>
+            <input type="checkbox" id="English" name="Languages_Known" value="English" />
+            <label for="English">English</label>
+            <input type="checkbox" id="Kannada" name="Languages_Known" value="Kannada" />
+            <label for="Kannada">Kannada</label>
+            <input type="checkbox" id="Hindi" name="Languages_Known" value="Hindi" />
+            <label for="Hindi">Hindi</label>
+            <input type="checkbox" id="Telugu" name="Languages_Known" value="Telugu" />
+            <label for="Telugu">Telugu</label>
+          </td>
+          <td id="languages_known_error" style="color: red"></td>
+        </tr>
+        <tr>
+          <td colspan="2">
+            <input type="checkbox" id="Verify" name="Verify" value="Verify" />
+            <label for="Verify">Hereby I declare all the given details are true</label>
+          </td>
+          <td id="terms_and_conditions_error" style="color: red"></td>
+        </tr>
+        <tr class="right-align">
+          <td colspan="2">
+            <p>Log in to <a href="https://ethnus.com/">Ethnus</a> website</p>
+          </td>
+        </tr>
+      </table>
+      <br />
+      <input type="submit" value="REGISTER" style="background-color:red;border:3px solid black;border-radius:25px;color:white;text-decoration:underline;width:17%;" />
+    </form>
+    <br>
+    <div id="error_message" style="color: red; text-align: center"></div>
+
+    <script>
+      function validateForm() {
+        var isValid = true;
+        var firstName = document.getElementById("First_Name").value;
+        if (firstName === "") {
+          document.getElementById("first_name_error").textContent = "POOR";
+          isValid = false;
+        } else {
+          document.getElementById("first_name_error").textContent = "";
+        }
+
+        var lastName = document.getElementById("Last_Name").value;
+        if (lastName === "") {
+          document.getElementById("last_name_error").textContent = "POOR";
+          isValid = false;
+        } else {
+          document.getElementById("last_name_error").textContent = "";
+        }
+
+        var email = document.getElementById("Email").value;
+        if (email === "") {
+          document.getElementById("email_error").textContent = "POOR";
+          isValid = false;
+        } else {
+          document.getElementById("email_error").textContent = "";
+        }
+
+        var password = document.getElementById("Password").value;
+        if (password === "") {
+          document.getElementById("password_error").textContent = "POOR";
+          isValid = false;
+        } else {
+          document.getElementById("password_error").textContent = "";
+        }
+
+        var passwordConfirmation = document.getElementById("Reenter_Password").value;
+        if (passwordConfirmation === "" || password !== passwordConfirmation) {
+          document.getElementById("password_confirmation_error").textContent =
+            "POOR OR MISMATCH";
+          isValid = false;
+        } else {
+          document.getElementById("password_confirmation_error").textContent = "";
+        }
+
+        var gender = document.querySelector('input[name="Gender"]:checked');
+        if (!gender) {
+          document.getElementById("gender_error").textContent = "POOR";
+          isValid = false;
+        } else {
+          document.getElementById("gender_error").textContent = "";
+        }
+
+        var age = document.getElementById("Age").value;
+        if (age === "") {
+          document.getElementById("age_error").textContent = "POOR";
+          isValid = false;
+        } else {
+          document.getElementById("age_error").textContent = "";
+        }
+
+        var phoneNumber = document.getElementById("Phone_Number").value;
+        if (phoneNumber === "") {
+          document.getElementById("phone_number_error").textContent = "POOR";
+          isValid = false;
+        } else {
+          document.getElementById("phone_number_error").textContent = "";
+        }
+
+        var address = document.getElementById("Address").value;
+        if (address === "") {
+          document.getElementById("address_error").textContent = "POOR";
+          isValid = false;
+        } else {
+          document.getElementById("address_error").textContent = "";
+        }
+
+        var state = document.getElementById("State").value;
+        if (state === "") {
+          document.getElementById("state_error").textContent = "POOR";
+          isValid = false;
+        } else {
+          document.getElementById("state_error").textContent = "";
+        }
+
+        var termsAndConditions = document.getElementById("Verify").checked;
+        if (!termsAndConditions) {
+          document.getElementById("terms_and_conditions_error").textContent =
+            "You must agree to the terms and conditions.";
+          isValid = false;
+        } else {
+          document.getElementById("terms_and_conditions_error").textContent = "";
+        }
+
+        if (isValid) {
+          alert("Validation Successful!!");
+          return true;
+        } else {
+          return false;
+        }
+      }
+    </script>
+  </body>
+</html>

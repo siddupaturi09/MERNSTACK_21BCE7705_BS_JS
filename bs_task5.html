@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bootstrap Task5</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"/>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"/>
+    <style media="screen">
+      i {
+        padding-top: 4px;
+        width: 30px;
+        height: 28px;
+        background-color: #ededed;
+        border: 0.5px solid black;
+        border-radius: 2px;
+        text-align: center;
+      }
+      table {
+        background-color: #ededed;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      td {
+        padding-left: 20px;
+        padding-bottom: 2px;
+        padding-top: 20px;
+        width: 80%;
+      }
+      th {
+        text-align: right;
+        padding-top: 16px;
+      }
+      .input-container {
+        position: relative;
+        display: inline-flex;
+        align-items: center;
+      }
+      .error-icon {
+        position: absolute;
+        top: 50%;
+        right: 5px;
+        transform: translateY(-50%);
+        pointer-events: none;
+        visibility: hidden;
+      }
+      .input-field.error {
+        border-color: #a44446 !important;
+      }
+      .button {
+        background-color: #eaa945;
+        color: white;
+      }
+      #sendIcon {
+        border: none;
+        background-color: #eaa945;
+        color: white;
+      }
+      .error-icon {
+        background-color: white;
+        height: 25px;
+      }
+      .input-field,
+      #State {
+        height: 30px;
+        width: 300px;
+      }
+    </style>
+  </head>
+  <body>
+    <br><br>
+    <div class="container">
+      <form id="myForm">
+        <table>
+          <tr>
+            <th><label for="First_Name">First Name</label></th>
+            <td>
+              <div class="input-container">
+                <i class="fa fa-user icon" id="firstNameIcon"></i>
+                <input class="input-field" type="text" placeholder="First Name" name="First_Name" id="First_Name"/>
+                <i class="fa fa-times error-icon" id="errorIcon_First_Name" style="visibility: hidden"></i>
+              </div>
+              <div id="error_First_Name"></div>
+            </td>
+          </tr>
+          <tr>
+            <th><label for="Last_Name">Last Name</label></th>
+            <td>
+              <div class="input-container">
+                <i class="fa fa-user icon" id="lastNameIcon"></i>
+                <input class="input-field" type="text" placeholder="Last Name" name="Last_Name" id="Last_Name"/>
+                <i class="fa fa-times error-icon" id="errorIcon_Last_Name" style="visibility: hidden"></i>
+              </div>
+              <div id="error_Last_Name"></div>
+            </td>
+          </tr>
+          <tr>
+            <th><label for="Email">Email</label></th>
+            <td>
+              <div class="input-container">
+                <i class="fa fa-envelope icon" id="emailIcon"></i>
+                <input class="input-field" type="text" placeholder="E-Mail Address" name="Email" id="Email"/>
+                <i class="fa fa-times error-icon" id="errorIcon_Email" style="visibility: hidden"></i>
+              </div>
+              <div id="error_Email"></div>
+            </td>
+          </tr>
+          <tr>
+            <th><label for="Phone">Phone#</label></th>
+            <td>
+              <div class="input-container">
+                <i class="fa fa-phone icon" id="phoneIcon"></i>
+                <input class="input-field" type="text" placeholder="(845)555-1212" name="Phone" id="Phone"/>
+                <i class="fa fa-times error-icon" id="errorIcon_Phone" style="visibility: hidden"></i>
+              </div>
+              <div id="error_Phone"></div>
+            </td>
+          </tr>
+          <tr>
+            <th><label for="Address">Address</label></th>
+            <td>
+              <div class="input-container">
+                <i class="fa fa-home icon" id="addressIcon"></i>
+                <input class="input-field" type="text" placeholder="Address" name="Address" id="Address" />
+                <i class="fa fa-times error-icon" id="errorIcon_Address" style="visibility: hidden" ></i>
+              </div>
+              <div id="error_Address"></div>
+            </td>
+          </tr>
+          <tr>
+            <th><label for="City">City</label></th>
+            <td>
+              <div class="input-container">
+                <i class="fa fa-home icon" id="cityIcon"></i>
+                <input class="input-field" type="text" placeholder="City" name="City" id="City" />
+                <i class="fa fa-times error-icon" id="errorIcon_City" style="visibility: hidden"></i>
+              </div>
+              <div id="error_City"></div>
+            </td>
+          </tr>
+          <tr>
+            <th><label for="State">State</label></th>
+            <td>
+              <div class="input-container">
+                <i class="fa fa-list icon" id="stateIcon"></i>
+                <select id="State" name="State">
+                  <option value="" selected>Please select your state</option>
+                  <option value="Andhra Pradesh">Andhra Pradesh</option>
+                  <option value="Karnataka">Karnataka</option>
+                  <option value="Kerala">Kerala</option>
+                  <option value="Tamil Nadu">Tamil Nadu</option>
+                  <option value="Telangana">Telangana</option>
+                  <option value="Other">Other</option>
+                </select>
+                <i class="fa fa-times error-icon" id="errorIcon_State" style="visibility: hidden"></i>
+              </div>
+              <div id="error_State"></div>
+            </td>
+          </tr>
+          <tr>
+            <th><label for="Hosting">Do you have hosting?</label></th>
+            <td class="radio-group">
+              <i style="visibility: hidden" id="hostingIcon"></i>
+              <input type="radio" id="yes" name="Hosting" value="Yes" />
+              <label for="yes">Yes</label><br />
+              <input type="radio" id="no" name="Hosting" value="No" />
+              <label for="no">No</label>
+              <div id="error_Hosting"></div>
+            </td>
+          </tr>
+          <tr>
+            <th><label for="Description">Project Description</label></th>
+            <td>
+              <div class="input-container">
+                <i class="fa fa-pencil icon bg-light" id="descriptionIcon"></i>
+                <textarea id="Description" name="Description" placeholder="Project Description" style="width: 300px; height: 30px"></textarea>
+              </div>
+              <div id="error_Description" style="width: 500px"></div>
+            </td>
+          </tr>
+          <td></td>
+          <td>
+            <button class="button" type="submit">
+            Send<i class="fa fa-send icon" id="sendIcon"></i>
+            </button>
+          </td>
+        </table>
+      </form>
+    </div>
+    <script>
+      document
+        .getElementById("myForm")
+        .addEventListener("submit", function (event) {
+          var isValid = true;
+          event.preventDefault();
+          function showError(elementId,errorElementId,iconElementId,errorMessage) {
+            isValid = false;
+            var element = document.getElementById(elementId);
+            var errorElement = document.getElementById(errorElementId);
+            var iconElement = document.getElementById(iconElementId);
+            element.style.borderColor = "#A44446";
+            errorElement.style.color = "#A44446";
+            iconElement.style.visibility = "visible";
+            errorElement.innerHTML = errorMessage;
+            iconElement.style.borderColor = "#A44446";
+            iconElement.style.backgroundColor = "#F0DEDC";
+            var labelElement = document.querySelector(
+              'label[for="' + elementId + '"]'
+            );
+            if (labelElement) {
+              labelElement.style.color = "#A44446";
+            }
+          }
+          
+          function clearError(elementId, errorElementId, iconElementId) {
+            var element = document.getElementById(elementId);
+            var errorElement = document.getElementById(errorElementId);
+            var iconElement = document.getElementById(iconElementId);
+            element.style.borderColor = "";
+            errorElement.innerHTML = "";
+            iconElement.style.visibility = "hidden";
+            iconElement.style.borderColor = "";
+            iconElement.style.backgroundColor = "";
+            var errorIcon = document.getElementById("errorIcon_" + elementId);
+            if (errorIcon) {
+              errorIcon.parentNode.removeChild(errorIcon);
+            }
+            var labelElement = document.querySelector(
+              'label[for="' + elementId + '"]'
+            );
+            if (labelElement) {
+              labelElement.style.color = "";
+            }
+          }
+
+          function showErrorIcon(elementId) {
+            var errorIconElement = document.getElementById(
+              "errorIcon_" + elementId
+            );
+            errorIconElement.style.visibility = "visible";
+            errorIconElement.style.borderColor = "white";
+            errorIconElement.style.color = "#A44446";
+          }
+
+          var firstName = document.getElementById("First_Name").value;
+          if (firstName.trim() === "") {
+            showError("First_Name","error_First_Name","firstNameIcon","Please supply your First Name");
+            showErrorIcon("First_Name");
+            isValid = false;
+          } else {
+            clearError("First_Name", "error_First_Name", "firstNameIcon");
+          }
+
+          var lastName = document.getElementById("Last_Name").value;
+          if (lastName.trim() === "") {
+            showError("Last_Name","error_Last_Name","lastNameIcon","Please supply your Last Name");
+            showErrorIcon("Last_Name");
+            isValid = false;
+          } else {
+            clearError("Last_Name", "error_Last_Name", "lastNameIcon");
+          }
+
+          var email = document.getElementById("Email").value;
+          if (email.trim() === "") {
+            showError("Email","error_Email","emailIcon","Please supply your email address");
+            showErrorIcon("Email");
+            isValid = false;
+          } else {
+            clearError("Email", "error_Email", "emailIcon");
+          }
+
+          var phone = document.getElementById("Phone").value;
+          if (phone.trim() === "") {
+            showError("Phone","error_Phone","phoneIcon","Please supply your phone number");
+            showErrorIcon("Phone");
+            isValid = false;
+          } else {
+            clearError("Phone", "error_Phone", "phoneIcon");
+          }
+
+          var address = document.getElementById("Address").value;
+          if (address.trim() === "") {
+            showError("Address","error_Address","addressIcon","Please supply your street address");
+            showErrorIcon("Address");
+            isValid = false;
+          } else {
+            clearError("Address", "error_Address", "addressIcon");
+          }
+
+          var city = document.getElementById("City").value;
+          if (city.trim() === "") {
+            showError("City","error_City","cityIcon","Please supply your City");
+            showErrorIcon("City");
+            isValid = false;
+          } else {
+            clearError("City", "error_City", "cityIcon");
+          }
+
+          var state = document.getElementById("State").value;
+          if (state.trim() === "") {
+            showError("State","error_State","stateIcon","Please select your State");
+            showErrorIcon("State");
+            isValid = false;
+          } else {
+            clearError("State", "error_State", "stateIcon");
+          }
+
+          var hostingRadioButtons = document.querySelectorAll(
+            'input[name="Hosting"]'
+          );
+          var hostingIcon = document.getElementById("hostingIcon");
+          var hostingLabel = document.querySelector('label[for="Hosting"]');
+          var hostingLabelYes = document.querySelector('label[for="yes"]');
+          var hostingLabelNo = document.querySelector('label[for="no"]');
+          var selectedHosting = false;
+          for (var i = 0; i < hostingRadioButtons.length; i++) {
+            if (hostingRadioButtons[i].checked) {
+              selectedHosting = true;
+              break;
+            }
+          }
+          if (!selectedHosting) {
+            showError("yes","error_Hosting","hostingIcon","Please select whether you have hosting or not!");
+            hostingLabel.style.color = "#A44446";
+            hostingLabelYes.style.color = "#A44446";
+            hostingLabelNo.style.color = "#A44446";
+            hostingIcon.style.visibility = "hidden";
+            isValid = false;
+          } else {
+            clearError("yes", "error_Hosting", "hostingIcon");
+            hostingLabel.style.color = "";
+            hostingIcon.style.visibility = "hidden";
+          }
+
+          var description = document.getElementById("Description").value;
+          if (description.trim() === "") {
+            showError("Description","error_Description","descriptionIcon","Please provide a Project Description");
+            showErrorIcon("Description");
+            isValid = false;
+          } else {
+            clearError("Description", "error_Description", "descriptionIcon");
+          }
+
+          if (isValid) {
+            this.submit();
+          }
+        });
+    </script>
+  </body>
+</html>

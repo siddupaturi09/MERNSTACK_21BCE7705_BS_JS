@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Javascript Task5</title>
+    <style>
+    label {
+    width: 120px;
+    display: inline-block; 
+    text-align: right;
+    }
+    input,
+    textarea {
+    width: 400px;
+    }
+    .btn {
+    margin-left: 140px;
+    }
+    p {
+    color: red;
+    display: inline;
+    margin-left: 10px;
+    }
+    </style>
+</head>
+<body>
+    <br><br>
+    <form>
+        <label for="name">Name:</label>
+        <input type="text" id="name" />
+        <p id="namep"></p>
+        <br /><br />
+        <label for="email">Email:</label>
+        <input type="email" id="email" />
+        <p id="emailp"></p>
+        <br /><br />
+        <label for="website">Website:</label>
+        <input type="text" id="website" />
+        <p id="webp"></p>
+        <br /><br />
+        <label for="msg">Message:</label>
+        <textarea name="msg" id="msg" cols="20" rows="10"></textarea>
+        <p id="msgp"></p>
+        <br /><br />
+        <div class="btn">
+            <button type="button" onclick="validateForm()">Submit</button>
+        </div>
+    </form>
+    <script>
+        function validateForm() {
+            var namefield = document.getElementById("name");
+            var emailfield = document.getElementById("email");
+            var websitefield = document.getElementById("website");
+            var msgfield = document.getElementById("msg");
+            var isValid = true;
+            var emailRegex = /^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,4}$/;
+            var urlRegex = /^(https?:\/\/)?([\da-z.-]+)\.([a-z.]{2,6})([/\w .-]*)*\/?$/;
+            if (namefield.value == "") {
+                document.getElementById("namep").innerHTML = "This field is required.";
+                isValid = false;
+            } else {
+                document.getElementById("namep").innerHTML = "";
+            }
+            if (!emailRegex.test(emailfield.value)) {
+                document.getElementById("emailp").innerHTML = "A valid email address is required";
+                isValid = false;
+            } else {
+                document.getElementById("emailp").innerHTML = "";
+            }
+            if (!urlRegex.test(websitefield.value)) {
+                document.getElementById("webp").innerHTML = "A valid URL is required";
+                isValid = false;
+            } else {
+                document.getElementById("webp").innerHTML = "";
+            }
+            if (msgfield.value == "") {
+                document.getElementById("msgp").innerHTML = "This field is required.";
+                isValid = false;
+            } else {
+                document.getElementById("msgp").innerHTML = "";
+            }
+            if (isValid) {
+                alert("Validation Successful");
+            }
+        }
+    </script>
+</body>
+</html>

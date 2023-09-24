@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <title>Javascript Task2</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style media="screen">
+    .str{
+        padding-left:30px;
+        font-size:18px;
+    }
+    h1{
+      font-family:'Georgia';
+      margin-left:30px;
+    }
+    .btn1{
+        width:5%;
+    }
+</style>
+</head>
+<body>
+  <br>
+  <h1 class="text-left">Sorting the Input String in Alphabetical Order</h1>
+  <br><br>
+  <label for="inputString" class="str"><b>Enter a string:</b></label>
+  <input type="text" id="inputString">
+  <button class="btn1" onclick="sortString()">Sort</button>
+  <br><br>
+  <p class="str"><b>Sorted String: </b><span id="sortedString"></span></p>
+
+  <script>
+    function sortString() {
+      let inputElement = document.getElementById("inputString");
+      let inputValue = inputElement.value;
+      let sortedValue = customSort(inputValue);
+      let sortedStringElement = document.getElementById("sortedString");
+      sortedStringElement.textContent = sortedValue;
+    }
+
+    function customSort(str) {
+      let chars = str.split('');
+      for (let i = 0; i < chars.length - 1; i++) {
+        for (let j = 0; j < chars.length - i - 1; j++) {
+          if (chars[j] > chars[j + 1]) {
+            let temp = chars[j];
+            chars[j] = chars[j + 1];
+            chars[j + 1] = temp;
+          }
+        }
+      }
+      return chars.join('');
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <title>Javascript Task1</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style media="screen">
+    .num{
+        padding-left:30px;
+        font-size:18px;
+    }
+    h1{
+      font-family:'Georgia';
+      margin-left:30px;
+    }
+</style>
+</head>
+<body>
+  <br>
+  <h1 class="text-left">Reversing a Number</h1>
+  <br><br>
+  <span class="num"><b>Enter a Number: </b></span>
+  <input class="num" type="number" id="numberInput" placeholder="Enter a number">
+  <button onclick="reverseAndDisplay()">Reverse</button>
+  <br><br>
+  <p class="num"><b>Reversed Number: </b><span id="reversedNumber"></span></p>
+  <script>
+    function reverseNumberWithArithmetic(number) {
+      let reversedNumber = 0;
+      while (number !== 0) {
+        const digit = number % 10;
+        reversedNumber = reversedNumber * 10 + digit;
+        number = Math.floor(number / 10);
+      }
+      return reversedNumber;
+    }
+    function reverseAndDisplay() {
+      let inputElement = document.getElementById("numberInput");
+      let inputValue = parseFloat(inputElement.value);
+      if (!isNaN(inputValue)) {
+        let reversedValue = reverseNumberWithArithmetic(inputValue);
+        let reversedNumberElement = document.getElementById("reversedNumber");
+        reversedNumberElement.textContent = reversedValue;
+      } else {
+        alert("Please enter a valid number.");
+      }
+    }
+  </script>
+</body>
+</html>

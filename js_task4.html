@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <title>Javascript Task4</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style media="screen">
+    h4{
+      font-family:'Times New Roman';
+    }
+    body{
+      padding-left:20px;
+    }
+    .b1{
+      border-radius:3px;
+      border:0.5px solid black;
+    }
+  </style>
+</head>
+<body>
+  <br>
+    <h4>Displaying Date and Time:</h4>
+    <br>
+    <button class="b1" id="dateButton">show date</button>
+    <p id="dateOutput"></p>
+    <br>
+    <button class="b1" id="timeButton">show Time</button>
+    <p id="timeOutput"></p>
+
+    <script>
+        document.getElementById("dateButton").addEventListener("click", function() {
+            var currentDateTime = new Date();
+            var dateElement = document.getElementById("dateOutput");
+            var day = currentDateTime.toLocaleDateString('en-US', { weekday: 'short' });
+            var month = currentDateTime.toLocaleDateString('en-US', { month: 'long' });
+            var date = currentDateTime.getDate();
+            var year = currentDateTime.getFullYear();
+            var formattedDate = date + '/' + month + '/' + year;
+            dateElement.textContent = formattedDate;
+        });
+
+        document.getElementById("timeButton").addEventListener("click", function() {
+            var currentDateTime = new Date();
+            var timeElement = document.getElementById("timeOutput");
+            var day = currentDateTime.toLocaleDateString('en-US', { weekday: 'short' });
+            var month = currentDateTime.toLocaleDateString('en-US', { month: 'short' });
+            var date = currentDateTime.getDate();
+            var year = currentDateTime.getFullYear();
+            var hours = currentDateTime.getHours();
+            var minutes = currentDateTime.getMinutes();
+            var seconds = currentDateTime.getSeconds();
+            var gmt = currentDateTime.toTimeString().split(' ')[1];
+            var formattedTime = `${day} ${month} ${date} ${year} ${hours}:${minutes}:${seconds} ${gmt}`;
+            timeElement.textContent = formattedTime;
+        });
+    </script>
+</body>
+</html>

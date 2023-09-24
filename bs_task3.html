@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bootstrap Task3</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"></script>
+  <style media="screen">
+    .container-xl{
+        margin-left:1px; 
+        width:85%;
+    }
+    #cn{
+        font-size:20px;
+        padding-left:12px;
+    }
+    .row{
+        margin-left:-15px;
+        display:flex;
+        flex-direction: row;  
+        padding-top:18px;
+        padding-bottom:9px;
+        width:120%;
+        box-shadow: -11px 12px 20px -21px #888888;
+    }
+    .col-md-10{
+        display:flex;
+        flex-direction:row;
+        justify-content:flex-end;
+        align-items:center;
+    }
+    .col-md-10 a{
+        color:black;
+    }
+    #text1{
+        font-size:57px;
+        font-weight:lighter;
+    }
+    #text2{
+        font-size:20px;
+        font-weight:lighter;
+        line-height:90%;
+    }
+    .row1{
+        display:flex;
+        margin-left:auto;
+        margin-right:auto;
+        justify-content:center;
+        align-items:center;
+        width:60%;
+    }
+    #heading{
+        font-size:28px;
+    }
+    #price{
+        font-size:40px;
+        font-weight:500;
+    }
+    #month{
+        font-size:30px;
+        color:gray;
+    }
+    #text3{
+        line-height:70%;
+    }
+    #btn1{
+        width:80%;
+        margin-bottom:20px;
+        font-size:20px;
+        margin-left:30px;
+    }
+    #box-1{
+        border:1px solid #e0e0e0;
+        border-radius:4px;
+        margin-top:-18px;
+    }
+    .row2{
+        display:flex;
+        flex-direction:row;
+        justify-content:space-evenly;
+        align-items:center;
+        margin-left:270px;
+        width:70%;
+        padding-top:50px;
+    }
+    #f1{
+        font-size:12px;
+        height:200px;
+    }
+    #fh{
+        font-size:18px;
+        font-weight:600;
+        padding-left:19px;
+    }
+    #text4{
+        text-decoration:none;
+        color:gray;
+    }
+    #f2{
+        line-height:70%;
+        height:200px;
+    }
+    #f3{
+        line-height:70%;
+        height:200px;
+    }
+    #f4{
+        line-height:70%;
+        height:200px;
+    }
+    .container-md{
+        padding-left:19px;
+    }
+</style>
+</head>
+<body>
+    <div class="container-xl col-md-12 ">
+        <div class="row">
+            <div class="container-md col-md-2">
+                <p id="cn">Company name</p>
+            </div>
+            <div class="container-md col-md-10">
+                <nav class="nav">
+                    <a href="#" class="nav-link">Features</a>
+                    <a href="#" class="nav-link">Enterprise</a>
+                    <a href="#" class="nav-link">Support</a>
+                    <a href="#" class="nav-link">Pricing</a>
+                </nav>
+                <button type="button" class="btn btn-outline-primary">Sign up</button>
+            </div>
+        </div>
+    </div>
+    <br><br>
+    <div class="text">
+        <p id="text1" class="text-center">Pricing</p>
+        <p id="text2" class="text-center">Quickly build an effective pricing table for your potential customers with this</p>
+        <p id="text2" class="text-center">Bootstrap example. It's built with default Bootstrap components and utilities with</p>
+        <p id="text2" class="text-center">little customization.</p>
+    </div>
+    <br>
+    <div class="row1">
+        <div class="container-lg col-md-4">
+            <div class="card">
+                <div class="card-header text-center" id="heading">Free</div>
+                <p class="card-text text-center"><span id="price">$0 </span><span id="month">/ mo</span></p>
+                <p class="card-text text-center" id="text3">10 users included</p>
+                <p class="card-text text-center" id="text3">2 GB of storage</p>
+                <p class="card-text text-center" id="text3">Email support</p>
+                <p class="card-text text-center" id="text3">Help center access</p>
+                <br>
+                <button type="button" class="btn btn-outline-primary" id="btn1">Sign up for free</button>
+            </div>
+        </div>
+        &emsp;
+        <div class="container-lg col-md-4">
+            <div class="card">
+                <div class="card-header text-center" id="heading">Pro</div>
+                <p class="card-text text-center"><span id="price">$15 </span><span id="month">/ mo</span></p>
+                <p class="card-text text-center" id="text3">20 users included</p>
+                <p class="card-text text-center" id="text3">10 GB of storage</p>
+                <p class="card-text text-center" id="text3">Priority email support</p>
+                <p class="card-text text-center" id="text3">Help center access</p>
+                <br>
+                <button type="button" class="btn btn-primary" id="btn1">Get started</button>
+            </div>
+        </div>
+        &emsp;
+        <div class="container-lg col-md-4">
+            <div class="card">
+                <div class="card-header text-center" id="heading">Enterprise</div>
+                <p class="card-text text-center"><span id="price">$29 </span><span id="month">/ mo</span></p>
+                <p class="card-text text-center" id="text3">30 users included</p>
+                <p class="card-text text-center" id="text3">15 GB of storage</p>
+                <p class="card-text text-center" id="text3">Phone and email support</p>
+                <p class="card-text text-center" id="text3">Help center access</p>
+                <br>
+                <button type="button" class="btn btn-primary" id="btn1">Contact us</button>
+            </div>
+        </div>
+    </div>
+    <br><br>
+    <hr style="width:60%;text-align:left;margin-left:300px">
+    <div class="row2">
+        <div class="container-md col-md-3" id="f1">
+            <img src="https://www.kindpng.com/picc/m/485-4850258_bootstrap-logo-png-image-free-download-searchpng-logos.png" alt="Bootstrap Logo"
+            style="width:15%">
+            <br><br>
+            <span>&copy;2017-2018</span>
+        </div>
+        <div class="container-md col-md-3" id="f2">
+            <p id="fh">Features</p>
+            <div class="container-md">
+                <p><a href="#" id="text4">Cool stuff</a></p>
+                <p><a href="#" id="text4">Random feature</a></p>
+                <p><a href="#" id="text4">Team feature</a></p>
+                <p><a href="#" id="text4">Stuff for developers</a></p>
+                <p><a href="#" id="text4">Another one</a></p>
+                <p><a href="#" id="text4">Last time</a></p>
+            </div>
+        </div>
+        <div class="container-md col-md-3" id="f3">
+            <p id="fh">Resources</p>
+            <div class="container-md">
+                <p><a href="#" id="text4">Resource</a></p>
+                <p><a href="#" id="text4">Resource name</a></p>
+                <p><a href="#" id="text4">Another resource</a></p>
+                <p><a href="#" id="text4">Final resource</a></p>
+            </div>
+        </div>
+        <div class="container-md col-md-3" id="f4">
+            <p id="fh">About</p>
+            <div class="container-md">
+                <p><a href="#" id="text4">Team</a></p>
+                <p><a href="#" id="text4">Locations</a></p>
+                <p><a href="#" id="text4">Privacy</a></p>
+                <p><a href="#" id="text4">Terms</a></p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

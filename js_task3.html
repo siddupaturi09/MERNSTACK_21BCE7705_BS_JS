@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <title>Javascript Task3</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style media="screen">
+        h3{
+            margin-left:20px;
+            font-family:Georgia, 'Times New Roman', Times, serif;
+        }
+        .container{
+            padding-top:20px;
+            width:30%;
+            height:250px;
+            border:1px solid black;
+            box-sizing:border-box;
+            margin-left:20px;
+        }
+        .align{
+            padding-left:20px;
+            display:inline-block;
+            font-family:"Times New Roman";
+            font-size:18px;
+        }
+        .btn1{
+            padding-left:20px;
+        }
+    </style>
+</head>
+<body>
+  <br><br>
+  <h3>Multiplication and Division</h3>
+  <br>
+  <div class="container">
+    <label for="number1" class="align"><b>1st Number :</b></label>
+    <input type="number" id="number1"><br>
+    <br>
+    <label for="number2" class="align"><b>2nd Number:</b></label>
+    <input type="number" id="number2"><br>
+    <br>
+    <div class="btn1">
+      <button onclick="multiplyNumbers()">Multiply</button>
+      <button onclick="divideNumbers()" >Divide</button><br>
+    </div>
+    <br>
+    <p class="align"><b>The result is: </b><span id="result"></span></p>
+  
+
+</div>
+
+  <script>
+    function multiplyNumbers() {
+      let number1 = parseFloat(document.getElementById("number1").value);
+      let number2 = parseFloat(document.getElementById("number2").value);
+
+      if (!isNaN(number1) && !isNaN(number2)){
+        let result = number1 * number2;
+        document.getElementById("result").textContent = result;
+      }
+      else {
+        document.getElementById("result").textContent = "Please enter valid numbers.";
+      }
+    }
+
+    function divideNumbers() {
+      let number1 = parseFloat(document.getElementById("number1").value);
+      let number2 = parseFloat(document.getElementById("number2").value);
+
+      if (!isNaN(number1) && !isNaN(number2) && number2 !== 0) {
+        let result = number1 / number2;
+        document.getElementById("result").textContent = result;
+      } else if (number2 === 0) {
+        document.getElementById("result").textContent = "Cannot divide by zero.";
+      } else {
+        document.getElementById("result").textContent = "Please enter valid numbers.";
+      }
+    }
+  </script>
+</body>
+</html>

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Javascript Task7</title>
+    <style media="screen">
+      body {
+        margin: 0;
+        padding: 0;
+      }
+      .container {
+        position: relative;
+      }
+      .container-md{
+        margin-left:480px;
+        position:absolute;
+        bottom:160px;
+      }
+      .train {
+        position: absolute;
+        top: 100px;
+        left: 100px;
+        width: 200px;
+        height: 100px;
+      }
+      @keyframes move {
+        from {
+          left: 100px;
+        }
+        to {
+          left: 700px;
+        }
+      }
+      .buttons {
+        text-align: center;
+        margin-top: 20px;
+       
+      }
+      button {
+        font-size: 16px;
+        margin: 10px;
+      }
+      p {
+        text-align: center;
+        font-size: 18px;
+      }
+      #t1{
+        font-size:32px;
+        color:#010277;
+        font-weight:bold;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="train">
+        <a href="https://imgbb.com/"><img
+            src="https://i.ibb.co/4VxSJPk/Screenshot-2023-09-19-152151.png"
+            alt="Screenshot-2023-09-19-152151" border="0"></a>
+      </div>
+    </div>
+    <div class="container-md">
+        <div class="container">
+            <p id="t1">Click the following buttons to handle animation</p>
+        </div>
+        <div class="buttons">
+            <button id="start">Start</button>
+            <button id="stop">Stop</button>
+        </div>
+    </div>
+
+    <script>
+        const train = document.querySelector(".train");
+        const startButton = document.querySelector("#start");
+        const stopButton = document.querySelector("#stop");
+        startButton.addEventListener("click", () => {
+          train.style.animation = "move 3s linear infinite";
+        });
+        stopButton.addEventListener("click", () => {
+          train.style.animation = "";
+        });
+      </script>
+  </body>
+</html>
